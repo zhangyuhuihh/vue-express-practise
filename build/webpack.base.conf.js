@@ -42,11 +42,12 @@ var webpackConf = {
       filename: 'index.html',
       template: path.resolve(__dirname, '../index.html'),
       inject: true
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
+    // new webpack.HotModuleReplacementPlugin()
   ]
 };
-Object.keys(webpackConf.entry).forEach(function (name) {
-  webpackConf.entry[name] = ['./build/hot-client'].concat(webpackConf.entry[name])
-})
+// 热重载相关,只需要在开发环境进行
+// Object.keys(webpackConf.entry).forEach(function (name) {
+//   webpackConf.entry[name] = ['./build/hot-client'].concat(webpackConf.entry[name])
+// })
 module.exports = webpackConf;
