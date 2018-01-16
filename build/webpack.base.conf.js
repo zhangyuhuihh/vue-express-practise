@@ -17,7 +17,7 @@ var webpackBaseConf = {
     filename: '[name].[hash].js'
   },
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions: ['.js', '.vue', '.css'],
     alias: {
       'vue': 'vue/dist/vue.js'
     } // 设置别名vue1不需要设置，vue2必须设置 否则会报错 
@@ -41,8 +41,8 @@ var webpackBaseConf = {
       filename: 'index.html',
       template: path.resolve(__dirname, '../index.html'),
       inject: true
-    })
-  //   // new webpack.HotModuleReplacementPlugin()
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
 // 热重载相关,只需要在开发环境进行

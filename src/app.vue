@@ -1,9 +1,9 @@
 <template>
-   <div>hello , t萨德 app vue !</div>
+   <div>hello ,  1222333哈哈sasda vue !</div>
 </template>
 
 <style>  
-     body{color:red;}
+     body{color:blue;}
 </style>
 <style>
   @import "./css/common.css";

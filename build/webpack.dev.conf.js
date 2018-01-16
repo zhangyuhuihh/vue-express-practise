@@ -25,6 +25,6 @@ var webpackDevConf = merge(webpackBaseConf, {
 // 为了打包到环境里
 Object.keys(webpackBaseConf.entry).forEach(function (name) {
   // webpackDevConf.entry[name] = ['./build/hot-client'].concat(webpackDevConf.entry[name])
-  webpackBaseConf.entry[name] = [hotClient].concat(webpackDevConf.entry[name])
+  webpackDevConf.entry[name] = [hotClient].concat(webpackDevConf.entry[name])
 })
 module.exports = webpackDevConf
