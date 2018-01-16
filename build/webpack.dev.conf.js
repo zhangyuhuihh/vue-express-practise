@@ -20,7 +20,6 @@ var webpackDevConf = merge(webpackBaseConf, {
     new webpack.NoErrorsPlugin(),
     new FriendlyErrorsPlugin()
   ]
-
 })
 // 为了打包到环境里
 Object.keys(webpackBaseConf.entry).forEach(function (name) {
