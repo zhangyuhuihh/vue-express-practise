@@ -5,14 +5,13 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 var webpackBaseConf = {
   // 入口文件，path.resolve()方法，可以结合我们给定的两个参数最后生成绝对路径，最终指向的就是我们的index.js文件 
   entry: {
     index: [path.resolve(__dirname, '../src/main.js')]
   },
   // 输出配置 
-  output: { // 输出路径是 myProject/output/static  
+  output: { // 输出路径是 myProject/output/static
     path: path.resolve(__dirname, '../output'),
     publicPath: '/',
     filename: '[name].[hash].js'
@@ -37,14 +36,14 @@ var webpackBaseConf = {
       }
     ]
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     filename: 'index.html',
-  //     template: path.resolve(__dirname, '../index.html'),
-  //     inject: true
-  //   })
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../index.html'),
+      inject: true
+    })
   //   // new webpack.HotModuleReplacementPlugin()
-  // ]
+  ]
 };
 // 热重载相关,只需要在开发环境进行
 // Object.keys(webpackConf.entry).forEach(function (name) {

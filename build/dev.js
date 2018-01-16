@@ -20,6 +20,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
   }
 });
 app.use(devMiddleware)
+// 挂载热重载
 app.use(hotMiddleware)
 app.listen('8888')
 opn('http://localhost:8888')
